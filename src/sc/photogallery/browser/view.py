@@ -105,3 +105,22 @@ class View(DefaultView, PhotoGalleryMixin):
 
     def zip_size(self):
         return self._zip_size(self.last_modified)
+
+
+    def getImgsGallery(self):
+        gallery = ""
+        if self.context.getChildNodes():
+            images = self.context.getChildNodes()
+            count = 0
+            for img in images:
+                if img.portal_type == "Image":
+                    name = img.title
+                    url = img.absolute_url()
+                    gallery = gallery + """
+                    <li style="outline-style: none;">
+                        <a title="%s" onclick="onClick(%s)"><img alt="" src="%s" /></a>
+                    </li>
+                    """ % (img.id, count, url)
+                    count += 1
+
+        return gallery

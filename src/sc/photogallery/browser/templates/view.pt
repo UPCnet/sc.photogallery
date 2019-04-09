@@ -25,9 +25,14 @@
           <div tal:content="structure text">The body</div>
         </div>
       </tal:text>
+
+      <div id="gal_tn" class="imgs_gallery">
+        <p tal:replace="structure view/getImgsGallery | nothing"></p>
+      </div>
+
       <div class="slideshow-container"
            tal:condition="not:is_empty"
-           tal:attributes="id string:photogallery-${view/id}">
+           tal:attributes="id string:photogallery">
         <div class="slideshow-player">
           <div class="cycle-player cycle-slideshow"
                data-cycle-slides="> div"
@@ -36,20 +41,33 @@
                data-allow-wrap="true"
                data-cycle-fx="fade"
                data-cycle-log="false"
-               tal:attributes="data-cycle-prev string:#photogallery-${view/id} .cycle-prev;
-                               data-cycle-next string:#photogallery-${view/id} .cycle-next">
+               tal:attributes="data-cycle-prev string:#photogallery .cycle-prev;
+                               data-cycle-next string:#photogallery .cycle-next">
             <div tal:repeat="item view/results">
               <tal:image define="image python:view.image(item)">
                 <img tal:attributes="alt item/Title;
                                      height image/height;
                                      src image/url;
                                      width image/width">
+                
               </tal:image>
+              <div tal:condition="item/Title" class="description-img">
+                <a class="linktoimg" tal:attributes="href string:${item/absolute_url}/view"><span style="font-weight:bold" tal:content="item/Title">Title</span></a><br>
+                <div class="descript-style">
+                  <span tal:content="item/Description">Description</span>
+                </div>
+                <div class="zoom-sl">
+                  <a onclick="zoomScene()"><span>&#x2610;</span></a>
+                </div>
+              </div>
             </div>
           </div><!-- cycle-player -->
           <div class="cycle-navigation">
             <a href="#" class="cycle-prev"><span>&#x27E8;</span></a>
             <a href="#" class="cycle-next"><span>&#x27E9;</span></a>
+          </div>
+          <div class="close-sl">
+            <a onclick="goBack()"><span>&#x22a0;</span></a>
           </div>
         </div><!-- slideshow-player -->
         <div class="slideshow-pager">
@@ -65,7 +83,7 @@
                   <span class="slide-num" tal:content="repeat/item/number" /> |
                   <span class="slide-count" tal:content="repeat/item/length" />
                 </div>
-                <div class="description" tal:content="item/Description|item/Title"></div>
+                <!--<div class="description" tal:content="item/Description|item/Title"></div>-->
               </div>
             </div><!-- cycle-description -->
           </div><!-- slideshow-description -->
@@ -120,6 +138,28 @@
       <div class="" tal:condition="is_empty" i18n:translate="">
         This photo gallery has no images on it.
       </div>
+
+
+      <script type="text/javascript">
+        $("#photogallery").hide()
+
+        function onClick(num){
+          $("#gal_tn").hide()
+          //check which number of thumbnail is and do cycle('goto', num)
+          $("#photogallery").show()
+          $('.cycle-slideshow').cycle('goto', num)
+          photogal.currentSlide = num
+        }
+
+        function goBack(){
+          $("#photogallery").hide()
+          $("#gal_tn").show()
+        }
+
+        function zoomScene(){
+          
+        }
+      </script>
     </metal:block>
   </body>
 </html>
