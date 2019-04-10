@@ -11,7 +11,7 @@ from sc.photogallery.utils import PhotoGalleryMixin
 from zope.component import getMultiAdapter
 
 import os
-
+from Products.CMFCore.utils import getToolByName
 
 if HAS_ZIPEXPORT:
     from ftw.zipexport.generation import ZipGenerator
@@ -26,7 +26,18 @@ class View(DefaultView, PhotoGalleryMixin):
 
     @memoizedproperty
     def results(self):
-        return self.context.listFolderContents()
+        labels = self.context.labels.encode('utf-8')
+        labels = labels.replace(' ', '').split(',')
+        key_words = tuple(labels)
+        catalog = getToolByName(self.context, 'portal_catalog')
+        brains = catalog.searchResults({'portal_type': 'Image', 'Subject': key_words })
+        results = []
+        for brain in brains:
+            obj = brain.getObject()
+            if obj not in results:
+                results.append(obj)
+
+        return results # self.context.listFolderContents() # this is to check the imgs inside the folder
 
     @property
     def is_empty(self):
@@ -109,18 +120,17 @@ class View(DefaultView, PhotoGalleryMixin):
 
     def getImgsGallery(self):
         gallery = ""
-        if self.context.getChildNodes():
-            images = self.context.getChildNodes()
+        images = self.results
+        if len(images) > 0:
             count = 0
             for img in images:
-                if img.portal_type == "Image":
-                    name = img.title
-                    url = img.absolute_url()
-                    gallery = gallery + """
-                    <li style="outline-style: none;">
-                        <a title="%s" onclick="onClick(%s)"><img alt="" src="%s" /></a>
-                    </li>
-                    """ % (img.id, count, url)
-                    count += 1
+                name = img.title
+                url = img.absolute_url()
+                gallery = gallery + """
+                <li style="outline-style: none;">
+                    <a title="%s" onclick="onClick(%s)"><img alt="" src="%s" /></a>
+                </li>
+                """ % (img.id, count, url)
+                count += 1
 
         return gallery

@@ -16,6 +16,11 @@ class IPhotoGallery(model.Schema):
 
     """A Photo Gallery content type with a slideshow view."""
 
+    labels = schema.TextLine(
+        title=_(u"Etiquetes"),
+        description=_(u"Introduiu els noms separats amb comes ','"),
+        required=True,
+    )
     text = RichText(
         title=_(u'Body text'),
         required=False,
