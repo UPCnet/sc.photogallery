@@ -15,12 +15,14 @@ class IBrowserLayer(Interface):
 class IPhotoGallery(model.Schema):
 
     """A Photo Gallery content type with a slideshow view."""
-
-    labels = schema.TextLine(
+    labels = schema.List(
         title=_(u"Etiquetes"),
-        description=_(u"Introduiu els noms separats amb comes ','"),
-        required=True,
+        description=_(u"Introduiu les etiquetes a mostrar"),
+        required=False,
+        value_type=schema.Choice(
+            vocabulary=u'plone.app.vocabularies.Keywords')
     )
+
     text = RichText(
         title=_(u'Body text'),
         required=False,

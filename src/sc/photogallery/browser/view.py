@@ -26,11 +26,9 @@ class View(DefaultView, PhotoGalleryMixin):
 
     @memoizedproperty
     def results(self):
-        labels = self.context.labels.encode('utf-8')
-        labels = labels.replace(' ', '').split(',')
-        key_words = tuple(labels)
+        subjects = [t.encode('utf-8') if isinstance(t, unicode) else t for t in self.context.labels]
         catalog = getToolByName(self.context, 'portal_catalog')
-        brains = catalog.searchResults({'portal_type': 'Image', 'Subject': key_words })
+        brains = catalog.searchResults({'portal_type': 'Image', 'Subject': subjects })
         results = []
         for brain in brains:
             obj = brain.getObject()
