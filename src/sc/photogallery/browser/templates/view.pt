@@ -57,7 +57,7 @@
                   <span tal:content="item/Description">Description</span>
                 </div>
                 <div class="zoom-sl">
-                  <a onclick="zoomScene()"><span>&#x2610;</span></a>
+                  <a id="a-zoom-id" onclick="zoomScene()"><span>&#x2610;</span></a>
                 </div>
               </div>
             </div>
@@ -139,9 +139,12 @@
         This photo gallery has no images on it.
       </div>
 
-
       <script type="text/javascript">
-        $("#photogallery").hide()
+        var zoomON = false;
+        var cc = document.getElementById('content-core');
+        var photg = document.getElementById('photogallery');
+        var backd;
+        $("#photogallery").hide();
 
         function onClick(num){
           $("#gal_tn").hide()
@@ -152,12 +155,59 @@
         }
 
         function goBack(){
+          if (zoomON){
+            zoomOutScene()
+          }
           $("#photogallery").hide()
           $("#gal_tn").show()
         }
 
         function zoomScene(){
-          
+          if (!zoomON){
+            if (document.body.lastElementChild.id != "dark-back"){
+              backd = document.createElement('div');
+              backd.className = 'dark-background';
+              backd.id = "dark-back";
+              backd.style.cssText = 'position:fixed;width:100%;height:100%;top:0;left:0;z-index:10000;background:rgba(0,0,0,0.8);align-items: center;justify-content: center;display: flex;';
+              document.body.appendChild(backd);
+
+            }
+            zoomInScene()
+          }
+          else{
+            zoomOutScene()
+          }
+        }
+        function zoomInScene(){
+            backd.appendChild(photg)
+            addStylesZoom()
+            zoomON = true
+            $('.dark-background').show()
+
+        }
+        function zoomOutScene(){
+            cc.appendChild(photg)
+            removeStylesZoom()
+            zoomON = false
+            $('.dark-background').hide()
+        }
+
+        function addStylesZoom(){
+          $('.slideshow-container').addClass('slideshow-container-zoom')
+          $('.cycle-player').addClass('cycle-player-zoom')
+          $('.cycle-player').addClass('cycle-slideshow-zoom')
+          $('.cycle-carrossel').addClass('slideshow-carrossel-zoom')
+          $('.slide-pagination').addClass('slide-pagination-zoom')
+          $('.slideshow-download').addClass('slideshow-download-zoom')
+        }
+
+        function removeStylesZoom(){
+          $('.slideshow-container').removeClass('slideshow-container-zoom')
+          $('.cycle-player').removeClass('cycle-player-zoom')
+          $('.cycle-player').removeClass('cycle-slideshow-zoom')
+          $('.cycle-carrossel').removeClass('slideshow-carrossel-zoom')
+          $('.slide-pagination').removeClass('slide-pagination-zoom')
+          $('.slideshow-download').removeClass('slideshow-download-zoom')
         }
       </script>
     </metal:block>
