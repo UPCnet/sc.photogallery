@@ -403,24 +403,12 @@ body.portaltype-photo-gallery .cycle-player img {
 
 /*Changes when zoom on*/
 
-/*.slideshow-container-zoom {
-  max-width: 1000px;
-  max-height: 800px;
-}
-
-.cycle-player-zoom, .cycle-slideshow-zoom{
-  max-width: 1000px;
-  max-height: 800px;
-}
-
-.zoom-on{
-  background:black;
-}
-*/
 .slideshow-container-zoom {
   z-index: 100000;
   max-width: 90% !important;
   max-height: 90% !important;
+  margin: 0px auto 0px !important;
+
 }
 
 body.portaltype-photo-gallery .cycle-player-zoom img {
