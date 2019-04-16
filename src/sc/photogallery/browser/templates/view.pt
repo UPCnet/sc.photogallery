@@ -71,6 +71,8 @@
           </div>
         </div><!-- slideshow-player -->
         <div class="slideshow-pager">
+          <div class="marc-selected">
+          </div>
           <div class="slideshow-description">
             <div class="cycle-description cycle-slideshow"
                  data-cycle-slides="> div"
@@ -153,7 +155,7 @@
           $('.cycle-slideshow').cycle('goto', num)
           photogal.currentSlide = num
         }
-
+        
         function goBack(){
           if (zoomON){
             zoomOutScene()
@@ -199,6 +201,7 @@
           $('.cycle-carrossel').addClass('slideshow-carrossel-zoom')
           $('.slide-pagination').addClass('slide-pagination-zoom')
           $('.slideshow-download').addClass('slideshow-download-zoom')
+          $('.marc-selected').addClass('marc-selected-zoom')
           $('.iconszoom').removeClass('glyphicon-resize-full')
           $('.iconszoom').addClass('glyphicon-resize-small')
         }
@@ -210,6 +213,7 @@
           $('.cycle-carrossel').removeClass('slideshow-carrossel-zoom')
           $('.slide-pagination').removeClass('slide-pagination-zoom')
           $('.slideshow-download').removeClass('slideshow-download-zoom')
+          $('.marc-selected').removeClass('marc-selected-zoom')
           $('.iconszoom').removeClass('glyphicon-resize-small')
           $('.iconszoom').addClass('glyphicon-resize-full')
         }

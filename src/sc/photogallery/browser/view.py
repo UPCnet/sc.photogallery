@@ -17,8 +17,6 @@ if HAS_ZIPEXPORT:
     from ftw.zipexport.generation import ZipGenerator
     from ftw.zipexport.interfaces import IZipRepresentation
 
-from home.core.utils import pref_lang
-
 
 class View(DefaultView, PhotoGalleryMixin):
     """Slideshow view for Photo Gallery content type."""
@@ -30,7 +28,7 @@ class View(DefaultView, PhotoGalleryMixin):
     def results(self):
         subjects = [t.encode('utf-8') if isinstance(t, unicode) else t for t in self.context.labels]
         catalog = getToolByName(self.context, 'portal_catalog')
-        brains = catalog.searchResults({'portal_type': 'Image', 'Subject': subjects , 'Language': pref_lang()})
+        brains = catalog.searchResults({'portal_type': 'Image', 'Subject': subjects})
         results = []
         for brain in brains:
             obj = brain.getObject()

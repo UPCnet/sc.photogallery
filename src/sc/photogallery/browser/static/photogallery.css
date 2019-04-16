@@ -55,7 +55,7 @@ body.portaltype-photo-gallery .cycle-player .cycle-slide {
 body.portaltype-photo-gallery .thumb-itens {
   overflow: hidden;
   max-height: 50px;
-  margin-right: 5px;
+  margin-right: 10px;
   cursor: pointer
 }
 
@@ -179,7 +179,6 @@ body.portaltype-photo-gallery .disabled {
 body.portaltype-photo-gallery .slideshow-carrossel,
 body.portaltype-photo-gallery .slideshow-description {
   float: left;
-  width: 50%
 }
 
 body.portaltype-photo-gallery .cycle-description.cycle-slideshow,
@@ -248,27 +247,31 @@ only screen and (max-width:480px) {
 }
 
 .slideshow-carrossel {
-  width: 75% !important;
+  width: 520px;
   position:relative;
-  left:12.5%;
+  left:0px;
 }
 
 .slideshow-carrossel img{
   border-radius: 4px;
   height: 75px;
 }
-
+.cycle-carousel-wrap{
+  margin-left: 212px!important;
+  z-index:2 !important;
+}
 .thumb-itens {
   max-height: 75px!important;
 }
 
 .slideshow-description{
-  position: absolute;
+  position: relative;
+  display: inline-flex;
 }
 
 .slide-pagination {
   position:relative;
-  width: 100px;
+  width: 120px;
   top:20px;
   left: 20px;
   font-size: 25px;
@@ -279,11 +282,24 @@ only screen and (max-width:480px) {
   width:75px;
   text-align: center;
   right:5px;
+  bottom:88px;
   float:right!important;
 }
 
 .cycle-carrossel{
-  border-radius: 4px;
+  border-radius: 6px;
+}
+
+.marc-selected{
+  position: relative;
+  display:inline-flex;
+  width: 106px;
+  height: 85px;
+  bottom: 5px;
+  right: 313px;
+  border: solid black;
+  border-radius:6px;
+  z-index: 3;
 }
 
 .description-img {
@@ -425,7 +441,8 @@ body.portaltype-photo-gallery .cycle-player-zoom img {
 
 .slideshow-carrossel-zoom {
   max-width: 100% !important;
-  background: grey !important;
+  background: rgba(1,1,1,0.3) !important;
+  left: 38% !important;
 }
 
 .slide-pagination-zoom {
@@ -438,6 +455,7 @@ body.portaltype-photo-gallery .cycle-player-zoom img {
 .slideshow-download-zoom {
   right:25px !important;
   width:90px !important;
+  top: 0px !important;
 }
 .slideshow-download-zoom a{
   color: white !important;
@@ -446,4 +464,8 @@ body.portaltype-photo-gallery .cycle-player-zoom img {
 .slideshow-download-zoom a:hover{
   text-decoration: none !important;
   color: grey !important;
+}
+.marc-selected-zoom{
+  right: 115px !important;
+  border: solid white !important;
 }
