@@ -57,7 +57,7 @@
                   <span tal:content="item/Description">Description</span>
                 </div>
                 <div class="zoom-sl">
-                  <a id="a-zoom-id" onclick="zoomScene()"><span>&#x2610;</span></a>
+                  <a id="a-zoom-id" onclick="zoomScene()"><span class="iconszoom glyphicon glyphicon-resize-full"></span></a>
                 </div>
               </div>
             </div>
@@ -67,7 +67,7 @@
             <a href="#" class="cycle-next"><span>&#x27E9;</span></a>
           </div>
           <div class="close-sl">
-            <a onclick="goBack()"><span>&#x22a0;</span></a>
+            <a onclick="goBack()"><span class="icona-upc icon-close" aria-hidden="true"></span></a>
           </div>
         </div><!-- slideshow-player -->
         <div class="slideshow-pager">
@@ -199,6 +199,8 @@
           $('.cycle-carrossel').addClass('slideshow-carrossel-zoom')
           $('.slide-pagination').addClass('slide-pagination-zoom')
           $('.slideshow-download').addClass('slideshow-download-zoom')
+          $('.iconszoom').removeClass('glyphicon-resize-full')
+          $('.iconszoom').addClass('glyphicon-resize-small')
         }
 
         function removeStylesZoom(){
@@ -208,6 +210,8 @@
           $('.cycle-carrossel').removeClass('slideshow-carrossel-zoom')
           $('.slide-pagination').removeClass('slide-pagination-zoom')
           $('.slideshow-download').removeClass('slideshow-download-zoom')
+          $('.iconszoom').removeClass('glyphicon-resize-small')
+          $('.iconszoom').addClass('glyphicon-resize-full')
         }
       </script>
     </metal:block>
