@@ -244,12 +244,15 @@ only screen and (max-width:480px) {
 
 .slideshow-pager {
   margin-top: 10px;
+  width: 100%
 }
 
 .slideshow-carrossel {
-  width: 520px;
+  width: 70%;
   position:relative;
-  left:0px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slideshow-carrossel img{
@@ -267,6 +270,7 @@ only screen and (max-width:480px) {
 .slideshow-description{
   position: relative;
   display: inline-flex;
+  width: 15%
 }
 
 .slide-pagination {
@@ -278,12 +282,13 @@ only screen and (max-width:480px) {
 }
 
 .slideshow-download {
+  float: right !important;
   clear:none!important;
-  width:75px;
+  width:10%;
+  right: 2%;
+  bottom: 88px;
+  display: inline-flex;
   text-align: center;
-  right:5px;
-  bottom:88px;
-  float:right!important;
 }
 
 .cycle-carrossel{
@@ -296,7 +301,7 @@ only screen and (max-width:480px) {
   width: 106px;
   height: 85px;
   bottom: 5px;
-  right: 313px;
+  right: 42.25%;
   border: solid black;
   border-radius:6px;
   z-index: 3;
@@ -440,9 +445,8 @@ body.portaltype-photo-gallery .cycle-player-zoom img {
 }
 
 .slideshow-carrossel-zoom {
-  max-width: 100% !important;
+  width: 92% !important;
   background: rgba(1,1,1,0.3) !important;
-  left: 38% !important;
 }
 
 .slide-pagination-zoom {
@@ -453,9 +457,8 @@ body.portaltype-photo-gallery .cycle-player-zoom img {
 }
 
 .slideshow-download-zoom {
-  right:25px !important;
-  width:90px !important;
-  top: 0px !important;
+  right: 3% !important;
+  width: 8% !important;
 }
 .slideshow-download-zoom a{
   color: white !important;
@@ -466,6 +469,6 @@ body.portaltype-photo-gallery .cycle-player-zoom img {
   color: grey !important;
 }
 .marc-selected-zoom{
-  right: 115px !important;
+  right: 39.6% !important;
   border: solid white !important;
 }

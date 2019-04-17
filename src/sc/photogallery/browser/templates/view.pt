@@ -202,6 +202,7 @@
           $('.slide-pagination').addClass('slide-pagination-zoom')
           $('.slideshow-download').addClass('slideshow-download-zoom')
           $('.marc-selected').addClass('marc-selected-zoom')
+          $('.cycle-carousel-wrap').css('left', '+=107px')
           $('.iconszoom').removeClass('glyphicon-resize-full')
           $('.iconszoom').addClass('glyphicon-resize-small')
         }
@@ -214,6 +215,7 @@
           $('.slide-pagination').removeClass('slide-pagination-zoom')
           $('.slideshow-download').removeClass('slideshow-download-zoom')
           $('.marc-selected').removeClass('marc-selected-zoom')
+          $('.cycle-carousel-wrap').css('left', '-=107px')
           $('.iconszoom').removeClass('glyphicon-resize-small')
           $('.iconszoom').addClass('glyphicon-resize-full')
         }
