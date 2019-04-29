@@ -194,6 +194,12 @@
             $('.dark-background').hide()
         }
 
+
+
+        var width_img = $('.slideshow-carrossel img').css('width').replace('px', '')
+        var width_zoom_wrap = parseInt(width_img) + 10
+        var width_car, width_zoom_marc, width_car_out, width_zoom_marc_out;
+        var once = true;
         function addStylesZoom(){
           $('.slideshow-container').addClass('slideshow-container-zoom')
           $('.cycle-player').addClass('cycle-player-zoom')
@@ -201,12 +207,23 @@
           $('.cycle-carrossel').addClass('slideshow-carrossel-zoom')
           $('.slide-pagination').addClass('slide-pagination-zoom')
           $('.slideshow-download').addClass('slideshow-download-zoom')
-          $('.marc-selected').addClass('marc-selected-zoom')
-          $('.cycle-carousel-wrap').css('left', '+=107px')
+          $('.marc-selected').addClass('marc-selected-zoom')   
+          $('.close-sl').addClass('close-sl-zoom')
+
+          $('.cycle-carousel-wrap').css('left', '+=' + String(width_zoom_wrap) + 'px')
+          if (once){
+            width_car = $('.slideshow-carrossel').css('width').replace('px', '')
+            width_zoom_marc = parseInt(width_car)/2 + 53
+            once = false
+          }
+          $('.marc-selected').css('right', String(width_zoom_marc) + 'px') 
+
           $('.iconszoom').removeClass('glyphicon-resize-full')
           $('.iconszoom').addClass('glyphicon-resize-small')
+          $('.slideshow-description').addClass('slideshow-description-zoom')
         }
 
+        var once_b = true
         function removeStylesZoom(){
           $('.slideshow-container').removeClass('slideshow-container-zoom')
           $('.cycle-player').removeClass('cycle-player-zoom')
@@ -215,9 +232,20 @@
           $('.slide-pagination').removeClass('slide-pagination-zoom')
           $('.slideshow-download').removeClass('slideshow-download-zoom')
           $('.marc-selected').removeClass('marc-selected-zoom')
-          $('.cycle-carousel-wrap').css('left', '-=107px')
+          $('.close-sl').removeClass('close-sl-zoom')
+
+          $('.cycle-carousel-wrap').css('left', '-=' + String(width_zoom_wrap) + 'px')
+
+          if (once_b){
+            width_car_out = $('.slideshow-carrossel').css('width').replace('px', '')
+            width_zoom_marc_out = parseInt(width_car_out)/2 + 55
+            once_b = false
+          }
+          $('.marc-selected').css('right', String(width_zoom_marc_out) + 'px')
+
           $('.iconszoom').removeClass('glyphicon-resize-small')
           $('.iconszoom').addClass('glyphicon-resize-full')
+          $('.slideshow-description').removeClass('slideshow-description-zoom')
         }
       </script>
     </metal:block>
