@@ -90,7 +90,6 @@ $(window).load(() => {
     photogal = new PhotoGallery(slideshow);
   }
   // PT TO JS
-  $("#photogallery").hide();
 
   cc = document.getElementById('content-core');
   photg = document.getElementById('photogallery');
@@ -99,7 +98,6 @@ $(window).load(() => {
 });
 
 // PT TO JS
-
 
 function onClick(num){
   $("#gal_tn").hide()

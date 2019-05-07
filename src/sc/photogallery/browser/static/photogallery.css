@@ -612,3 +612,7 @@ body.portaltype-photo-gallery .cycle-player-zoom img {
     display: none;
   }
 }
+
+#photogallery {
+  display: none;
+}
