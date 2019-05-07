@@ -3,11 +3,20 @@ Changelog
 
 There's a frood who really knows where his towel is.
 
-1.0b4 (unreleased)
-------------------
+2.0 (2019-05-07)
+----------------
 
-- Nothing changed yet.
-
+* display none [r.ventura]
+* js code added at photogallery.js [r.ventura]
+* photogallery view decente para diferentes resoluciones [r.ventura]
+* divs responsive (when zoom in out) [r.ventura]
+* quit lang filter and carousel centered [r.ventura]
+* imgs from same lang and new icons [r.ventura]
+* margin removed when zoom [r.ventura]
+* zoom done! [r.ventura]
+* filter by subject well implemented [r.ventura]
+* images taken from subject (labels) not from folder contents [r.ventura]
+* Evolution test for UPC [r.ventura]
 
 1.0b3 (2018-01-30)
 ------------------
