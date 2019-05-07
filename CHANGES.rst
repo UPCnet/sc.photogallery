@@ -3,10 +3,9 @@ Changelog
 
 There's a frood who really knows where his towel is.
 
-2.1 (unreleased)
-----------------
+2.0-upcnet (2019-05-07)
+-----------------------
 
-- Nothing changed yet.
 
 
 2.0 (2019-05-07)
