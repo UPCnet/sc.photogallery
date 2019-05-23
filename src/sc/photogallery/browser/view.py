@@ -28,14 +28,20 @@ class View(DefaultView, PhotoGalleryMixin):
     def results(self):
         subjects = [t.encode('utf-8') if isinstance(t, unicode) else t for t in self.context.labels]
         catalog = getToolByName(self.context, 'portal_catalog')
-        brains = catalog.searchResults({'portal_type': 'Image', 'Subject': subjects})
+
+        brains = []
+        # search Subjects one by one in the way they are ordered.
+        for subject in subjects:
+            brains += (catalog.searchResults({'portal_type': 'Image', 'Subject': subject}))
+
         results = []
         for brain in brains:
             obj = brain.getObject()
             if obj not in results:
                 results.append(obj)
 
-        return results # self.context.listFolderContents() # this is to check the imgs inside the folder
+
+        return results
 
     @property
     def is_empty(self):
