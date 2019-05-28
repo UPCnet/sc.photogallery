@@ -1,7 +1,6 @@
 .photogallery-tile .slideshow-container,
 body.portaltype-photo-gallery .slideshow-container {
   width: 100%;
-  max-width: 748px;
   margin: 10px auto
 }
 
@@ -26,7 +25,6 @@ body.portaltype-photo-gallery .photogallery-tile .cycle-slideshow * {
 body.portaltype-photo-gallery .cycle-slideshow {
   position: relative;
   width: 100%;
-  max-width: 732px;
   height: auto;
   padding: 0;
   background: #f1f1f1
@@ -34,13 +32,11 @@ body.portaltype-photo-gallery .cycle-slideshow {
 
 .photogallery-tile .cycle-player img,
 body.portaltype-photo-gallery .cycle-player img {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   display: block;
-  width: 100%;
   max-width: 100% !important;
-  height: auto;
   max-height: 100% !important;
   margin: 0 auto;
   padding: 0
@@ -48,7 +44,7 @@ body.portaltype-photo-gallery .cycle-player img {
 
 .photogallery-tile .cycle-player .cycle-slide,
 body.portaltype-photo-gallery .cycle-player .cycle-slide {
-  width: 100%
+  /*width: 100%*/
 }
 
 .photogallery-tile .thumb-itens,
@@ -66,7 +62,6 @@ body.portaltype-photo-gallery .thumb-itens img {
 
 .photogallery-tile .cycle-slideshow img:first-child,
 body.portaltype-photo-gallery .cycle-slideshow img:first-child {
-  position: static;
   z-index: 100
 }
 
@@ -77,7 +72,7 @@ body.portaltype-photo-gallery .slideshow-player {
 
 .photogallery-tile .cycle-pager,
 body.portaltype-photo-gallery .cycle-pager {
-  position: absolute;
+  position: relative;
   z-index: 500;
   top: 10px;
   overflow: hidden;
@@ -128,7 +123,7 @@ body.portaltype-photo-gallery a.cycle-prev {
   font-size: 50px;
   z-index: 800;
   width: 10%;
-  height: 87%;
+  height: 100%;
   cursor: pointer;
   text-align: center;
   opacity: 0;
@@ -143,7 +138,7 @@ body.portaltype-photo-gallery a.cycle-prev {
 body.portaltype-photo-gallery a.cycle-next span,
 body.portaltype-photo-gallery a.cycle-prev span {
   position: absolute;
-  top: 50%
+  top: 40%
 }
 
 .photogallery-tile .cycle-prev,
@@ -297,7 +292,7 @@ only screen and (max-width:480px) {
   width: 106px;
   height: 85px;
   bottom: 5px;
-  right: 42.25%;
+  right: 42.35%;
   border: solid black;
   border-radius:6px;
   z-index: 3;
@@ -380,7 +375,7 @@ only screen and (max-width:480px) {
 
 .photogallery-tile .cycle-player img,
 body.portaltype-photo-gallery .cycle-player img {
-  height: 500px;
+  /*height: 500px;*/
 }
 
 .cycle-prev:hover, .cycle-next:hover {
@@ -470,9 +465,7 @@ body.portaltype-photo-gallery .cycle-player-zoom img {
 }
 
 @media (min-width: 992px){
-  .close-sl {
-  margin-right: 15px;
-  }
+
   .close-sl-zoom {
   margin-right: 0px;
   }
@@ -560,6 +553,10 @@ body.portaltype-photo-gallery .cycle-player-zoom img {
     height: 50px;
   }
 
+  .thumb-itens {
+  max-height: 50px!important;
+  }
+
   .slideshow-download {
     float: right!important;
     clear: none!important;
@@ -576,8 +573,8 @@ body.portaltype-photo-gallery .cycle-player-zoom img {
     display: inline-flex;
     width: 70px;
     height: 60px;
-    bottom: -4px;
-    right: 39.25%;
+    bottom: -55px;
+    right: 38.25%;
     border: solid black;
     border-radius: 6px;
     z-index: 3;
@@ -615,4 +612,16 @@ body.portaltype-photo-gallery .cycle-player-zoom img {
 
 #photogallery {
   display: none;
+}
+
+/*start keeping the normal size of the imgs*/
+
+.slideshow-player .cycle-slideshow .cycle-slide-active img{
+  position:relative;
+}
+
+.slideshow-pager {
+  max-width: 748px;
+  margin: 10px auto;
+  position: relative;
 }

@@ -23,6 +23,7 @@ class PhotoGallery {
                     photogal.currentSlide = size_imgs
                   }
                   $('.cycle-slideshow').cycle('goto', photogal.currentSlide)
+                  setHeightAndWidth()
                 break;
 
                 case 39: // right
@@ -31,6 +32,7 @@ class PhotoGallery {
                     photogal.currentSlide = 0
                   }
                   $('.cycle-slideshow').cycle('goto', photogal.currentSlide)
+                  setHeightAndWidth()
                 break;
 
                 case 27: //ESC
@@ -62,6 +64,7 @@ class PhotoGallery {
     let index, $player, $slideshows;
     $slideshows = this.$('.cycle-slideshow');
     $slideshows.cycle('goto', opts.currSlide);
+    setHeightAndWidth()
     this.currentSlide = opts.currSlide
   }
   thumbs_click(e) {
@@ -71,6 +74,7 @@ class PhotoGallery {
     index = $thumbs.data('cycle.API').getSlideIndex(e.target.parentElement);
     $slideshows = this.$('.cycle-slideshow');
     $slideshows.cycle('goto', index);
+    setHeightAndWidth()
     this.currentSlide = index
   }
 }
@@ -95,6 +99,9 @@ $(window).load(() => {
   photg = document.getElementById('photogallery');
   width_img = $('.slideshow-carrossel img').css('width').replace('px', '')
   width_zoom_wrap = parseInt(width_img) + 10;
+
+
+
 });
 
 // PT TO JS
@@ -105,6 +112,39 @@ function onClick(num){
   $("#photogallery").show()
   $('.cycle-slideshow').cycle('goto', num)
   photogal.currentSlide = num
+  setHeightAndWidth()
+
+  
+
+}
+
+function setHeightAndWidth(){
+
+  var he = $('.cycle-slide-active').css('height')
+  var wi = $('.cycle-slide-active').css('width')
+  $('.cycle-sentinel').css('height', he)
+  $('.cycle-sentinel').css('width', wi)
+
+  $('.slideshow-player .cycle-slide-active').css('position', 'relative')
+  $('.slideshow-player .cycle-sentinel').css('display', 'none')
+  $('.slideshow-player .cycle-slide').css('display', 'none')
+  $('.slideshow-player .cycle-slide-active').css('display', 'block')
+
+  /*description*/
+  var divwi = $('.slideshow-player .cycle-slide-active').css('width').replace('px', '')
+  var imgwi = $('.slideshow-player .cycle-slide-active img').css('width').replace('px', '')
+  var left = (parseInt(divwi) - parseInt(imgwi))/2
+  $('.description-img').css('left', String(left) + 'px')
+  $('.description-img').css('width', imgwi)
+
+  /*back*/
+  $('.close-sl').css('right', left)
+
+  /*prev and next*/
+  $('.cycle-next').css('right', left)
+  $('.cycle-prev').css('left', left)
+
+
 }
 
 function goBack(){
