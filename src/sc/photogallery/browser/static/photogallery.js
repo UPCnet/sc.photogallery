@@ -130,19 +130,15 @@ function setHeightAndWidth(){
   $('.slideshow-player .cycle-slide').css('display', 'none')
   $('.slideshow-player .cycle-slide-active').css('display', 'block')
 
-  /*description*/
+
+  /*description
   var divwi = $('.slideshow-player .cycle-slide-active').css('width').replace('px', '')
   var imgwi = $('.slideshow-player .cycle-slide-active img').css('width').replace('px', '')
   var left = (parseInt(divwi) - parseInt(imgwi))/2
   $('.description-img').css('left', String(left) + 'px')
-  $('.description-img').css('width', imgwi)
+  $('.description-img').css('width', imgwi)*/
 
-  /*back*/
-  $('.close-sl').css('right', left)
 
-  /*prev and next*/
-  $('.cycle-next').css('right', left)
-  $('.cycle-prev').css('left', left)
 
 
 }
@@ -194,6 +190,7 @@ function addStylesZoom(){
   $('.slide-pagination').addClass('slide-pagination-zoom')
   $('.slideshow-download').addClass('slideshow-download-zoom')
   $('.marc-selected').addClass('marc-selected-zoom')   
+  $('.slideshow-pager').addClass('slideshow-pager-zoom')
   $('.close-sl').addClass('close-sl-zoom')
 
   $('.cycle-carousel-wrap').css('left', '+=' + String(width_zoom_wrap) + 'px')
@@ -218,6 +215,7 @@ function removeStylesZoom(){
   $('.slide-pagination').removeClass('slide-pagination-zoom')
   $('.slideshow-download').removeClass('slideshow-download-zoom')
   $('.marc-selected').removeClass('marc-selected-zoom')
+  $('.slideshow-pager').removeClass('slideshow-pager-zoom')
   $('.close-sl').removeClass('close-sl-zoom')
 
   $('.cycle-carousel-wrap').css('left', '-=' + String(width_zoom_wrap) + 'px')
