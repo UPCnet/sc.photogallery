@@ -3,11 +3,12 @@ Changelog
 
 There's a frood who really knows where his towel is.
 
-2.1-upcnet.dev0 (unreleased)
-----------------------------
+2.1-upcnet (2019-05-29)
+-----------------------
 
-- Nothing changed yet.
-
+* size changed, width 100% and height auto, zoom done [r.ventura]
+* img now use their diferent size [r.ventura]
+* Gallery: imgs ordered by the same order of the subjects field [r.ventura]
 
 2.0-upcnet (2019-05-07)
 -----------------------
