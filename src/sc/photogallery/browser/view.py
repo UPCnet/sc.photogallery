@@ -134,7 +134,7 @@ class View(DefaultView, PhotoGalleryMixin):
                 <li style="outline-style: none;">
                     <a title="%s" onclick="onClick(%s)"><img alt="" src="%s" /></a>
                 </li>
-                """ % (img.id, count, url)
+                """ % (name, count, url)
                 count += 1
 
         return gallery
