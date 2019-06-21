@@ -3,11 +3,10 @@ Changelog
 
 There's a frood who really knows where his towel is.
 
-2.2-upcnet (unreleased)
------------------------
+2.2 (2019-06-21)
+----------------
 
-- Nothing changed yet.
-
+* title in thumbnail and border without radius [r.ventura]
 
 2.1-upcnet (2019-05-29)
 -----------------------
