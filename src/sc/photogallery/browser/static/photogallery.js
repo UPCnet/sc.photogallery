@@ -93,12 +93,19 @@ $(window).load(() => {
     slideshow = ref[i];
     photogal = new PhotoGallery(slideshow);
   }
+
   // PT TO JS
+
 
   cc = document.getElementById('content-core');
   photg = document.getElementById('photogallery');
-  width_img = $('.slideshow-carrossel img').css('width').replace('px', '')
-  width_zoom_wrap = parseInt(width_img) + 10;
+
+  if (photg != undefined){
+    width_img = $('.slideshow-carrossel img').css('width').replace('px', '')
+    width_zoom_wrap = parseInt(width_img) + 10;
+  }
+
+
 
 
 
