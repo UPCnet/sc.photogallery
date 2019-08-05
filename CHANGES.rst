@@ -3,11 +3,10 @@ Changelog
 
 There's a frood who really knows where his towel is.
 
-2.3 (unreleased)
+2.3 (2019-08-05)
 ----------------
 
-- Nothing changed yet.
-
+* fix bug JS replace of undefined [r.ventura]
 
 2.2 (2019-06-21)
 ----------------
