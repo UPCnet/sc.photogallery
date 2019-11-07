@@ -3,11 +3,10 @@ Changelog
 
 There's a frood who really knows where his towel is.
 
-2.4 (unreleased)
+2.4 (2019-11-07)
 ----------------
 
-- Nothing changed yet.
-
+* Mostrar las imagenes de la galeria en la calidad original [Iago López Fernández]
 
 2.3 (2019-08-05)
 ----------------
