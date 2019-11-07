@@ -39,7 +39,7 @@ msgstr "Descargar todas las imágenes en un archivo ZIP (${zip_size})"
 
 #: sc/photogallery/browser/templates/view.pt:103
 msgid "Download image (${img_size})"
-msgstr "Descargar imagen (${img_size})"
+msgstr "Descargar el archivo (${img_size})"
 
 #: sc/photogallery/interfaces.py:40
 msgid "Enable download of original images in photo galleries by using an explicit link. If ftw.zipexport is installed, enable also downloading of a ZIP file with all the images."
