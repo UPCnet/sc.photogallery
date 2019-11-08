@@ -3,11 +3,10 @@ Changelog
 
 There's a frood who really knows where his towel is.
 
-2.5 (unreleased)
+2.5 (2019-11-08)
 ----------------
 
-- Nothing changed yet.
-
+* Traducción [Iago López Fernández]
 
 2.4 (2019-11-07)
 ----------------
