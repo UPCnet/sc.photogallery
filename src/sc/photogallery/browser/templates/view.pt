@@ -46,7 +46,9 @@
             <div tal:repeat="item view/results">
               <tal:image define="image python:view.image(item)">
                 <img tal:attributes="alt item/Title;
-                                     src string:${item/absolute_url}/@@images/image.jpeg;">
+                                     src image/url;
+                                     height image/height;
+                                     width image/width;">
 
               </tal:image>
               <div tal:condition="item/Title" class="description-img">

@@ -369,7 +369,7 @@ only screen and (max-width:480px) {
 }
 
 .imgs_gallery a img.last {
-  margin-right: 0;  
+  margin-right: 0;
 }
 
 .photogallery-tile .cycle-player img,
@@ -476,7 +476,7 @@ body.portaltype-photo-gallery .cycle-player img {
   }
 }
 
-@media (max-width: 991px) and (min-width: 750px){ 
+@media (max-width: 991px) and (min-width: 750px){
   .marc-selected{
     right: 41.25%;
   }
@@ -561,7 +561,7 @@ body.portaltype-photo-gallery .cycle-player img {
     float: right!important;
     clear: none!important;
     width: 14%;
-    right: 0; 
+    right: 0;
     bottom: 0;
     display: inline-flex;
     text-align: center;
