@@ -3,11 +3,10 @@ Changelog
 
 There's a frood who really knows where his towel is.
 
-2.6 (unreleased)
+2.6 (2020-06-15)
 ----------------
 
-- Nothing changed yet.
-
+* Corregir error visualització web upc en ie11 [alberto.duran]
 
 2.5 (2019-11-08)
 ----------------
