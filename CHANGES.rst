@@ -3,11 +3,10 @@ Changelog
 
 There's a frood who really knows where his towel is.
 
-2.7 (unreleased)
+2.7 (2020-09-23)
 ----------------
 
-- Nothing changed yet.
-
+* Update outdated import [alberto.duran]
 
 2.6 (2020-06-15)
 ----------------
