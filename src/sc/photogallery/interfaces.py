@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from plone.app.dexterity import MessageFactory as __
+from zope.i18nmessageid import MessageFactory as __
 from plone.app.textfield import RichText
 from plone.supermodel import model
 from sc.photogallery import _
