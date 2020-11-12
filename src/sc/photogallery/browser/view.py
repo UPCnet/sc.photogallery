@@ -11,7 +11,6 @@ from sc.photogallery.utils import PhotoGalleryMixin
 from zope.component import getMultiAdapter
 
 import os
-from Products.CMFCore.utils import getToolByName
 
 if HAS_ZIPEXPORT:
     from ftw.zipexport.generation import ZipGenerator
@@ -27,12 +26,15 @@ class View(DefaultView, PhotoGalleryMixin):
     @memoizedproperty
     def results(self):
         subjects = [t.encode('utf-8') if isinstance(t, unicode) else t for t in self.context.labels]
-        catalog = getToolByName(self.context, 'portal_catalog')
+        catalog = api.portal.get_tool(name='portal_catalog')
 
         brains = []
         # search Subjects one by one in the way they are ordered.
         for subject in subjects:
-            brains += (catalog.searchResults({'portal_type': 'Image', 'Subject': subject}))
+            brains += catalog.searchResults(
+                {'portal_type': 'Image',
+                 'Subject': subject,
+                 'sort_on': 'getObjPositionInParent'}) #CreationDate
 
         results = []
         for brain in brains:
