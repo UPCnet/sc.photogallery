@@ -3,11 +3,10 @@ Changelog
 
 There's a frood who really knows where his towel is.
 
-2.8 (unreleased)
+2.8 (2020-11-17)
 ----------------
 
-- Nothing changed yet.
-
+* Order image gallery like getObjPositionInParent [alberto.duran]
 
 2.7 (2020-09-23)
 ----------------
